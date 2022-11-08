@@ -23,6 +23,25 @@ void insert(Node *&head, int d)
     head = temp;
 }
 
+
+// Insert at position
+void insertAtPost(Node *head, int pos, int d){
+
+    int cnt=1;
+    //index start 1 se
+    while(cnt<pos-1){
+        head=head->next;
+        cnt++;
+    }
+
+    //Node for data
+    Node *temp=new Node(d);
+
+    temp->next= head->next;
+    head->next=temp;
+
+
+}
 // Insert at tail
 void TailInsert(Node *&tail, int d)
 {
@@ -75,6 +94,12 @@ int main()
 
     print(head);
     cout<<endl;
+
+    cout << getLen(head) << endl;
+
+    insertAtPost(head,3,29);
+    print(head);
+    cout << endl;
 
     cout << getLen(head) << endl;
 
