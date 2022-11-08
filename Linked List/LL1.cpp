@@ -23,25 +23,6 @@ void insert(Node *&head, int d)
     head = temp;
 }
 
-
-// Insert at position
-void insertAtPost(Node *head, int pos, int d){
-
-    int cnt=1;
-    //index start 1 se
-    while(cnt<pos-1){
-        head=head->next;
-        cnt++;
-    }
-
-    //Node for data
-    Node *temp=new Node(d);
-
-    temp->next= head->next;
-    head->next=temp;
-
-
-}
 // Insert at tail
 void TailInsert(Node *&tail, int d)
 {
@@ -62,6 +43,41 @@ int getLen(Node *head)
         head = head->next;
     }
     return cnt;
+}
+
+// Insert at position
+void insertAtPost(Node *head, int pos, int d){
+
+
+
+    if(pos==1){
+        insert(head,d);
+        return ;
+    }
+
+    // if(getLen(head)==pos-1){
+    //     TailInsert(head,d);
+    // }
+    int cnt=1;
+    //index start 1 se
+    while(cnt<pos-1){
+        head=head->next;
+        cnt++;
+    }
+
+    //insert at last pos
+    if(head->next==NULL){
+        TailInsert(head,d);
+        return ;
+    }
+
+    //Node for data
+    Node *temp=new Node(d);
+
+    temp->next= head->next;
+    head->next=temp;
+
+
 }
 
 // Print the ll
@@ -100,8 +116,20 @@ int main()
     insertAtPost(head,3,29);
     print(head);
     cout << endl;
+    
 
     cout << getLen(head) << endl;
 
+    insertAtPost(head, 1, 33);
+    print(head);
+    cout << endl;
+
+    cout << getLen(head) << endl;
+
+    insertAtPost(head, 9, 44);
+    print(head);
+    cout << endl;
+
+    cout << getLen(head) << endl;
     return 0;
 }
