@@ -120,11 +120,11 @@ int main()
 
     cout << getLen(head) << endl;
 
-    insertAtPost(head, 1, 33);
-    print(head);
-    cout << endl;
+    // insertAtPost(head, 1, 33);
+    // print(head);
+    // cout << endl;
 
-    cout << getLen(head) << endl;
+    // cout << getLen(head) << endl;
 
     insertAtPost(head, 9, 44);
     print(head);
