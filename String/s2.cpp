@@ -13,9 +13,12 @@ int main()
 
     // so that/s why use strcpy
 
-    char str[6];
-    strcpy(str, "gfg");
-    cout << str << " ";
+    // char str[6];
+    // strcpy(str, "gfg");
+    // cout << str << " ";
+
+    string str="gfg";
+    cout<< str.find("hem");
 
     // int arr[5];
     // arr[1]=2;
