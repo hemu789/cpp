@@ -5,7 +5,6 @@
 //  o/p: 3
 
 #include <iostream>
-#include <bits/stdc++.h>
 using namespace std;
 
 void takeInput(int arr[], int size)
@@ -33,15 +32,36 @@ int main()
     int arr[n];
     takeInput(arr, n);
 
-    //*******-----------------***********- approach 1
-
-    int ans = 0;
+    int cnt = 0;
 
     for (int i = 0; i < n; i++)
     {
-        ans = ans ^ arr[i];
-    }
-    cout << ans;
+        for (int j = 0; j < n; j++)
+        {
+            if (i != j)
+            {
+                if (arr[i] == arr[j])
+                {
+                    cnt++;
+                }
+            }
+        }
 
-        return 0;
+        if (cnt == 0)
+        {
+            cout << arr[i] << endl;
+        }
+    }
+
+    //*******-----------------***********- approach 2
+
+    // int ans = 0;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     ans = ans ^ arr[i];
+    // }
+    // cout << ans;
+
+    return 0;
 }
