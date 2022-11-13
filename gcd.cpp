@@ -1,4 +1,8 @@
 #include <iostream>
+
+// 1979. Find Greatest Common Divisor of Array
+// leetcode problem likewise  537,140
+// updated rank
 using namespace std;
 
 // gcd hcf(highest value)
@@ -9,10 +13,9 @@ using namespace std;
 // 15  : 1 3 5 15
 
 // eg 56,35 gcd:7
-//eg 24,36 gcd:12(highest value)
+// eg 24,36 gcd:12(highest value)
 
-
-//lcm of 15,24 is 120  ,  18,24:72
+// lcm of 15,24 is 120  ,  18,24:72
 
 // step1 check both no if equal return any one them
 // step2 check greatest no : greatest no- smallest and repeat uptil when both are equals
@@ -37,18 +40,18 @@ int check(int n1, int n2)
     return n1;
 }
 
-
-
-int findlcm(int n1, int n2){
+int findlcm(int n1, int n2)
+{
     // int Lcm= a×b / gcd(a, b);
-    //formula of lcm
-    int gcd=check(n1,n2);
 
-    int lcm=n1*n2/gcd;
+    // formula of lcm
+
+    int gcd = check(n1, n2);
+
+    int lcm = n1 * n2 / gcd;
 
     return lcm;
 }
-
 
 int main()
 {
@@ -63,13 +66,11 @@ int main()
 
     int ans = check(num1, num2);
 
+    cout << "GCD OF TWO NO's is " << endl;
+    cout << ans << endl;
 
-    cout<<"GCD OF TWO NO's is "<<endl;
-    cout << ans<<endl;
-
-
-    int ans2=findlcm(num1,num2);
+    int ans2 = findlcm(num1, num2);
     cout << "lCM OF TWO NO's is " << endl;
-    cout<< ans2<<endl;
+    cout << ans2 << endl;
     return 0;
 }
