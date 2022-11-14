@@ -1,7 +1,7 @@
 #include <iostream>
 
 // 1979. Find Greatest Common Divisor of Array
-// leetcode problem likewise  537,140
+// leetcode problem likewise  5,24,140
 // updated rank
 using namespace std;
 
